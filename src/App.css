@@ -1,0 +1,143 @@
+/* 1. إعدادات عامة */
+body {
+  background-color: #f4f4f9;
+  font-family: 'Alexandria', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. إعدادات العنوان */
+h1, h2, h3 {
+  color: #041b29;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* 3. تنسيق الأزرار */
+button, .btn {
+  background: linear-gradient(135deg, #f3b545, #e89e2c);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(135deg, #e1a737, #c88b25);
+  transform: scale(1.07);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. تنسيق الفورم */
+form {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. تنسيق الحقول داخل الفورم */
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #f3b545;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(243, 181, 69, 0.4);
+}
+
+/* 6. تحسين شريط التنقل */
+.navbar {
+  padding: 15px 20px;
+  background: #041b29;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-brand {
+  font-size: 1.7rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark .nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.navbar-dark .nav-link:hover {
+  color: #f3b545;
+  transform: scale(1.1);
+}
+
+/* 7. تحسين الجداول */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #041b29;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.table td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* 8. تحسين العرض على الأجهزة المحمولة */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  form {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
