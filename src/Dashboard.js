@@ -46,18 +46,18 @@ const Dashboard = () => {
   };
 
   // تعديل المنتج
-  const editProduct = async (id, name, price) => {
-    try {
-      const productRef = doc(db, "products", id);
-      await updateDoc(productRef, {
-        name,
-        price: parseFloat(price),
-      });
-      fetchProducts();
-    } catch (error) {
-      console.error("خطأ في تعديل المنتج:", error);
-    }
-  };
+  // const editProduct = async (id, name, price) => {
+  //   try {
+  //     const productRef = doc(db, "products", id);
+  //     await updateDoc(productRef, {
+  //       name,
+  //       price: parseFloat(price),
+  //     });
+  //     fetchProducts();
+  //   } catch (error) {
+  //     console.error("خطأ في تعديل المنتج:", error);
+  //   }
+  // };
 
   // حذف المنتج
   const deleteProduct = async (id) => {
@@ -147,12 +147,12 @@ const Dashboard = () => {
                     <td>{product.name}</td>
                     <td>{product.price.toFixed(2)}</td>
                     <td>
-                      <button
+                      {/* <button
                         className="btn btn-warning me-2"
                         onClick={() => editProduct(product.id, product.name, product.price)}
                       >
                         تعديل
-                      </button>
+                      </button> */}
                       <button
                         className="btn btn-danger"
                         onClick={() => deleteProduct(product.id)}

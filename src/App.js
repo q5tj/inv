@@ -64,8 +64,8 @@ const App = () => {
 
         {/* Hero Section */}
         <header className="hero-section text-center mt-5 mb-4">
-          <h1 className="display-4 fw-bold text-primary">مرحبًا بك في تطبيق الفواتير</h1>
-          <p className="lead text-muted">ابدأ في إنشاء الفواتير الإلكترونية بسهولة وسرعة.</p>
+          {/* <h1 className="display-4 fw-bold text-primary">مرحبًا بك في تطبيق الفواتير</h1>
+          <p className="lead text-muted">ابدأ في إنشاء الفواتير الإلكترونية بسهولة وسرعة.</p> */}
           <NavLink to="/login" className="btn btn-lg btn-success mt-3">ابدأ الآن</NavLink>
         </header>
 
