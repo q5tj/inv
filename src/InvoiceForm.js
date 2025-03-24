@@ -46,7 +46,7 @@ const InvoiceForm = ({ onGenerateInvoice }) => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [successMessage, setSuccessMessage] = useState(null)
   const [isGenerating, setIsGenerating] = useState(false)
-  const [currency, setCurrency] = useState("ريال")
+  const [currency, setCurrency] = useState("SR")
   const [invoiceNumber, setInvoiceNumber] = useState("")
   const [showPreview, setShowPreview] = useState(false)
   const [taxRate, setTaxRate] = useState(15) // Default 15% VAT
@@ -311,24 +311,28 @@ const InvoiceForm = ({ onGenerateInvoice }) => {
 
         // Add company logo if available
         if (companyLogo) {
-          doc.addImage(companyLogo, "JPEG", 105, 10, 30, 30, undefined, "FAST")
-          doc.setFontSize(22)
-          doc.setTextColor(44, 62, 80)
-          doc.text("فاتورة", 105, 50, { align: "center" })
-        } else {
-          // Add header without logo
-          doc.setFontSize(22)
-          doc.setTextColor(44, 62, 80)
-          doc.text("فاتورة", 105, 20, { align: "center" })
-        }
+// حساب عرض الصفحة
+const pageWidth = doc.internal.pageSize.width;
 
-        // Add invoice details
-        doc.setFontSize(12)
-        doc.setTextColor(0, 0, 0)
-        doc.text(`رقم الفاتورة: ${invoiceNumber}`, 190, 40, { align: "right" })
-        doc.text(`التاريخ: ${new Date().toLocaleDateString("ar-SA")}`, 190, 50, { align: "right" })
+// أبعاد الصورة المطلوبة
+const imgWidth = 50;  // تعديل حسب الحاجة
+const imgHeight = 40; // تعديل حسب الحاجة
 
-        // Add payment status
+// حساب الموقع ليكون في المنتصف
+const imgX = (pageWidth - imgWidth) / 2;
+const imgY = 2; // تعديل الارتفاع حسب الحاجة
+
+// إضافة الصورة في المنتصف
+doc.addImage(companyLogo, "JPEG", imgX, imgY, imgWidth, imgHeight, undefined, "FAST");
+
+          // Add invoice details
+          doc.setFontSize(12)
+          doc.setTextColor(0, 0, 0)
+          doc.text(`رقم الفاتورة: ${invoiceNumber}`, 190, 40, { align: "right" })
+          doc.text(`التاريخ: ${new Date().toLocaleDateString("ar-SA")}`, 190, 50, { align: "right" })
+        } // Closing brace for if (companyLogo)
+  
+          // Add payment status
         let statusColor
         let statusText
         switch (paymentStatus) {
@@ -417,7 +421,7 @@ const InvoiceForm = ({ onGenerateInvoice }) => {
 
         doc.save(`invoice-${invoiceNumber}.pdf`)
         resolve()
-      }, 1000)
+      });
     })
   }
 
@@ -432,7 +436,19 @@ const InvoiceForm = ({ onGenerateInvoice }) => {
 
         // Add company logo if available
         if (companyLogo) {
-          doc.addImage(companyLogo, "JPEG", 15, 10, 30, 30, undefined, "FAST")
+// حساب عرض الصفحة
+const pageWidth = doc.internal.pageSize.width;
+
+// أبعاد الصورة المطلوبة
+const imgWidth = 50;  // تعديل حسب الحاجة
+const imgHeight = 40; // تعديل حسب الحاجة
+
+// حساب الموقع ليكون في المنتصف
+const imgX = (pageWidth - imgWidth) / 2;
+const imgY = 2; // تعديل الارتفاع حسب الحاجة
+
+// إضافة الصورة في المنتصف
+doc.addImage(companyLogo, "JPEG", imgX, imgY, imgWidth, imgHeight, undefined, "FAST");
           doc.setFontSize(22)
           doc.setTextColor(44, 62, 80)
           doc.text("INVOICE", 105, 50, { align: "center" })
